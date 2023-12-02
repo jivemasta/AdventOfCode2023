@@ -6,14 +6,15 @@ namespace AdventOfCode2023
     {
         public static void DayOneMain()
         {
+
             var calibrationStrings = Utils.LinesFromFile("TrebuchetCalibration.txt");
 
-            // Day1: Part 1
+            // Day 1: Part 1
             DateTime startTime = DateTime.Now;
             Console.WriteLine($"Digit Based Calibration Value: {DayOnePartOne(calibrationStrings)}");
             Console.WriteLine($"Ran in {-startTime.Subtract(DateTime.Now).TotalMilliseconds} milliseconds");
 
-            // Day1: Part 2
+            // Day 1: Part 2
             startTime = DateTime.Now;
             Console.WriteLine($"Digit and Word Based Calibration Value {DayOnePartTwo(calibrationStrings)}");
             Console.WriteLine($"Ran in {-startTime.Subtract(DateTime.Now).TotalMilliseconds} milliseconds");

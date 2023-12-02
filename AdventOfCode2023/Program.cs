@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             DayOne.DayOneMain();
+            DayTwo.DayTwoMain();
         }
     }
 }

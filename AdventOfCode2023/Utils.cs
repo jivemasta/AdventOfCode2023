@@ -9,13 +9,9 @@ namespace AdventOfCode2023
 {
     internal class Utils
     {
-        public static IEnumerable<string> LinesFromFile(string filename)
+        public static List<List<char>> FileTo2d(string filename)
         {
-            var reader = new StreamReader(filename);
-            while (reader.ReadLine() is string line)
-            {
-                yield return line;
-            }
+            return File.ReadAllLines(filename).Select(line => line.ToList()).ToList();
         }
     }
 

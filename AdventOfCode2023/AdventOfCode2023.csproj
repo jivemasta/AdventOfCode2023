@@ -11,6 +11,9 @@
     <None Update="Input Files\CubeGames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Input Files\ExampleEngineSchematic.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Input Files\TrebuchetCalibration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

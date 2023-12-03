@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2023.Tests
+namespace AdventOfCode2023Tests
 {
     [TestClass()]
     public class DayThreeTests
@@ -15,7 +15,7 @@ namespace AdventOfCode2023.Tests
         public void PartOneExampleSchematic()
         {
             // Load ExampleEngineSchematic file
-            string engineSchematicFileName = @"ExampleEngineSchematic.txt";
+            string engineSchematicFileName = @"Input Files\ExampleEngineSchematic.txt";
 
             Assert.AreEqual(4361, DayThree.DayThreePartOne(engineSchematicFileName));
         }

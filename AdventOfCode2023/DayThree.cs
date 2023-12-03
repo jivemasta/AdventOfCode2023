@@ -1,4 +1,7 @@
-﻿namespace AdventOfCode2023
+﻿using System.Collections;
+using System.Text.RegularExpressions;
+
+namespace AdventOfCode2023
 {
     public class DayThree
     {
@@ -7,7 +10,7 @@
             // Day 3: Gear Ratios
             Console.WriteLine("Day 3: Gear Ratios");
 
-            string engineSchematicFilename = @"";
+            string engineSchematicFilename = @"Input Files\ExampleEngineSchematic.txt";
 
             // Day 3: Part 1
             // Sum of the part numbers in engine schematic
@@ -25,7 +28,10 @@
         public static int DayThreePartOne(string engineSchematicFilename)
         {
             // Get file into 2d grid of chars
+            var engineSchematic = new EngineSchematic(engineSchematicFilename);
+
             // get list of coordinates of all special symbols (everything that isn't a number or '.') <- regex? [^0-9|.]
+
             // go through list and find numbers in the 8 coordinates around it's coordinates
             // put those coordinates in list
             // go through list of the number coordinates and find the start of each number
@@ -46,5 +52,58 @@
         {
             throw new NotImplementedException();
         }
+    }
+
+    public class EngineSchematic(string filePath)
+    {
+        private readonly List<List<char>> _grid = Utils.FileTo2d(filePath);
+        private readonly IEnumerable<string> lines = File.ReadAllLines(filePath);
+        public int Width
+        {
+            get
+            {
+                return lines.First().Length;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return lines.ToArray().Length;
+            }
+        }
+
+        public IEnumerable<Point> SymbolPoints
+        {
+            get
+            {
+                var symbolRegex = new Regex(@"[^0-9|.]");
+
+                int lineNumber = -1;
+                foreach (var line in lines)
+                {
+                    lineNumber++;
+
+                    MatchCollection matches = symbolRegex.Matches(line);
+                    if (matches.Count == 0) continue;
+                    foreach (Match match in matches.Cast<Match>())
+                    {
+                        yield return new Point
+                        {
+                            X = lineNumber,
+                            Y = match.Index % Width
+                        };
+                    }
+
+                }
+            }
+        }
+    }
+
+    public record Point
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 }

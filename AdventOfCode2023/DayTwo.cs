@@ -7,7 +7,7 @@ namespace AdventOfCode2023
         public static void DayTwoMain()
         {
             // Day 2: Cube Conundrum
-            var linesFromFile = Utils.LinesFromFile(@"Input Files\CubeGames.txt");
+            var linesFromFile = File.ReadLines(@"Input Files\CubeGames.txt");
 
             // Day 2: Part 1
             // Sum of the game number of possible games

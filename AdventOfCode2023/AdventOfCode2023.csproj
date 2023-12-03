@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="CubeGames.txt">
+    <None Update="Input Files\CubeGames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TrebuchetCalibration.txt">
+    <None Update="Input Files\TrebuchetCalibration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

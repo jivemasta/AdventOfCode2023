@@ -7,7 +7,7 @@ namespace AdventOfCode2023
         public static void DayOneMain()
         {
 
-            var calibrationStrings = Utils.LinesFromFile("TrebuchetCalibration.txt");
+            var calibrationStrings = Utils.LinesFromFile(@"Input Files\TrebuchetCalibration.txt");
 
             // Day 1: Part 1
             DateTime startTime = DateTime.Now;

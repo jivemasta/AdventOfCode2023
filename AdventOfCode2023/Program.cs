@@ -6,6 +6,7 @@
         {
             DayOne.DayOneMain();
             DayTwo.DayTwoMain();
+            DayThree.DayThreeMain();
         }
     }
 }
